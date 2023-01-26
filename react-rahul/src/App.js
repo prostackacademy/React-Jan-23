@@ -1,17 +1,14 @@
 import React from 'react'
-import User from './PropsEx/User'
-import './assets/css/rajni.css'
-import Message from './stateEx/Message'
+import Message from './components/Message'
 import Navbar from './Navbar/Navbar'
-import Counter from './stateEx/Counter'
-import Product from './stateEx/Product'
+import Counter from './components/Counter'
 const App = () => {
   return (
     <div>
       <Navbar />
-      {/*   <h1>App component</h1> */}
+      <Message />
       <hr />
-      <Product />
+      <Counter />
     </div>
   )
 }
