@@ -1,44 +1,42 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Axios from 'axios'
+import { useEffect } from 'react'
 import UserList from './UserList'
 import UserDetails from './UserDetails'
-import Axios from 'axios'
-export class UserApp extends Component {
-    state = {
-        user: {},
-        selectedUser: {}
-    }
-    selectedUser = (user) => {
+let UserApp = () => {
+    let [user, setUser] = React.useState({})
+    let [selUser, setSelectedUser] = React.useState({})
+
+    let selectedUser = (user) => {
+        setSelectedUser(user)
         console.log(user.firstName)
-        this.setState({ selectedUser: user })
     }
-    componentDidMount() {
+    useEffect(() => {
         Axios.get('https://dummyjson.com/users')
             .then((response) => {
-                this.setState({ user: response.data })
+                setUser(response.data)
             })
             .catch(() => { })
-    }
-    render() {
-        return <div className="container">
-            {/* <pre>{JSON.stringify(this.state.user)}</pre> */}
-            {/*  <pre>{JSON.stringify(this.state.selectedUser)}</pre> */}
-            <div className="row">
-                <div className="col-md-8">
-
-                    {
-                        Object.keys(this.state.user).length > 0 ? <> <UserList users={this.state.user.users} selUser={this.selectedUser} /></> : null
-                    }
-                </div>
-                <div className="col-md-4">
-
-                    {
-                        Object.keys(this.state.selectedUser).length > 0 ? <>   <UserDetails user={this.state.selectedUser} />
-                        </> : null
-                    }
-                </div>
+    }, [])
+    return <div className="container">
+        <pre>{JSON.stringify(user)}</pre>
+        <div className="row">
+            <div className="col-md-8">
+                {
+                    Object.keys(user).length > 0 ? <React.Fragment>
+                        <UserList users={user.users} propMethod={selectedUser} />
+                    </React.Fragment> : null
+                }
+            </div>
+            <div className="col-md-4">
+                {
+                    Object.keys(selUser).length > 0 ? <>
+                        <UserDetails user={selUser} />
+                    </> : null
+                }
             </div>
         </div>
-    }
-}
 
+    </div>
+}
 export default UserApp
