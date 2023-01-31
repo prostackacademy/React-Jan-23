@@ -1,24 +1,31 @@
-import React, { Component } from 'react'
-import Navbar from './Navbar/Navbar'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react'
 import Home from './components/Home'
-import UserApp from './UserApp/UserApp'
+import Digital from './components/Digital'
+import Contact from './components/Contact'
+import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+const App = () => {
+  return (
+    <div>
+      <Router>
+        <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+          <Link to="#" className="navbar-brand">Life Cycle Methods</Link>
+          <div className="ml-auto">
+            <ul className="navbar-nav">
+              <li className="nav-list"><Link className="nav-link" to="/home">Home</Link></li>
+              <li className="nav-list"><Link className="nav-link" to="/digital">Digital Clock</Link></li>
+              <li className="nav-list"><Link className="nav-link" to="/contact">Contact</Link></li>
+            </ul>
+          </div>
+        </nav>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/digital" component={Digital} />
+          <Route path="/contact" component={Contact} />
+        </Switch>
+      </Router>
 
-export class App extends Component {
-  render() {
-    return (
-      <div>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/userApp" component={UserApp} />
-
-          </Switch>
-        </Router>
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default App
