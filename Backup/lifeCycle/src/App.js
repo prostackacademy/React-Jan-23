@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from './components/Home'
-import User from './components/User'
+import Digital from './components/Digital'
+import Contact from './components/Contact'
 import { Link, BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 const App = () => {
   return (
@@ -11,15 +12,15 @@ const App = () => {
           <div className="ml-auto">
             <ul className="navbar-nav">
               <li className="nav-list"><Link className="nav-link" to="/home">Home</Link></li>
-              <li className="nav-list"><Link className="nav-link" to="/user">User</Link></li>
-
+              <li className="nav-list"><Link className="nav-link" to="/digital">Digital Clock</Link></li>
+              <li className="nav-list"><Link className="nav-link" to="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>
         <Switch>
           <Route path="/home" component={Home} />
-          <Route path="/user" component={User} />
-
+          <Route path="/digital" component={Digital} />
+          <Route path="/contact" component={Contact} />
         </Switch>
       </Router>
 
