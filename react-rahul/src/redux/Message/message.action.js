@@ -1,15 +1,18 @@
-//What is action
+let GM = "GM"
+let GN = "GN"
+let GA = "GA"
 
-//action is function, it return actionable object
-//create Action types
-let GM = 'GM'
-let GN = 'GN'
+let gaAction = () => {
+    return { type: GA }
+}
 let gmAction = () => {
-    console.log("gm Action - take idly")
+    console.log("Action")
     return { type: GM }
 }
-let gnAction = () => {
-    console.log("gn action - take ....")
-    return { type: GN }
-}
-export { gmAction, gnAction, GM, GN }
+let gnAction =
+    () => {
+        return { type: GN }
+    }
+
+
+export { GM, GA, GN, gmAction, gnAction, gaAction }

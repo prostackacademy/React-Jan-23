@@ -1,18 +1,16 @@
-//what is reducer?
-//reducer is pure function,it takes two parameter 
-//1.state,
-//2.action
-import { GM, GN } from './message.action'
+//import action types
+import { GM, GN, GA } from './message.action'
+//what is reducer? pure function
 let initialState = {
-    msg: "Hello........."
+    msg: "Hello"
 }
+
 let messageReducer = (state = initialState, action) => {
-    console.log("Inside Reducer")
+    console.log("Test Case ")
     switch (action.type) {
-        case GM:
-            return { msg: "Hello,Good Morning Rahul Gandhi" }
-        case GN:
-            return { msg: "Good Night Rahul Gandhi" }
+        case GM: return { msg: "GM Rahul Ji" }
+        case GA: return { msg: "Good Noon, Miss Sonia Ji" }
+        case GN: return { msg: "GN Modi Ji" }
         default:
             return state
     }
