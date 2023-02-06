@@ -1,8 +1,6 @@
+import { productReducer } from './Product/product.reducer'
 import { createStore } from 'redux'
-import { messageReducer } from './message/message.reducer'
 import { composeWithDevTools } from '@redux-devtools/extension'
-let store = createStore(messageReducer, composeWithDevTools())
+let store = createStore(productReducer, composeWithDevTools())
 
 export { store }
-
-//creating store based on reducers
