@@ -7,6 +7,8 @@ const App = () => {
         <div>
             <Provider store={store}>
                 <h1>App Component</h1>
+                <hr />
+                <Product />
             </Provider>
         </div>
     )

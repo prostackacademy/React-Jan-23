@@ -7,13 +7,14 @@ let initialState = {
     qty: 1
 }
 let productReducer = (state = initialState, action) => {
-
+    console.log("inside - reducer")
     switch (action.type) {
         case "INCR":
-            return { qty: 100 }
+            return { ...state, qty: state.qty + 1 }
         case "DECR":
             return {
-                qty: 200
+                ...state,
+                qty: state.qty - 1
             }
 
         default:
