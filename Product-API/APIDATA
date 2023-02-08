@@ -1,0 +1,10 @@
+
+/*
+    USAGE : Get all the products
+    URL : http://127.0.0.1:5000/api/products
+    Method : GET
+    Fields : no-fields
+ */
+
+ //POST MAN , iso 
+ //VS Code Extention
