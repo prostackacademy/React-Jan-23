@@ -6,8 +6,8 @@ const Navbar = () => {
         <div className="ml-auto">
             <ul className="navbar-nav">
                 <li className="nav-list"> <Link to="/products" className="nav-link">Products</Link> </li>
-                <li className="nav-list" ><Link to="/Admin" className="nav-link">Admin</Link>
-                </li>
+                <li className="nav-list" ><Link to="/Admin" className="nav-link">Admin</Link> </li>
+                <li className="nav-list" ><Link to="/login" className="nav-link">Login-useRef Hook</Link></li>
             </ul>
         </div>
     </nav>
