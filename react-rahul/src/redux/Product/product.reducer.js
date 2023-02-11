@@ -1,24 +1,25 @@
-//what is reducer? reducer is pure function. and It take two arguments 
-//as input. 1.state 2.action
+//import action types 
 import { INCR, DECR } from './product.action'
 let initialState = {
-    product_Name: "Iphone 8",
-    price: 45000,
-    qty: 1
+    product_Name: "Iphone",
+    price: 15000,
+    qty: 1,
+    image: ""
 }
-let productReducer = (state = initialState, action) => {
-    console.log("inside - reducer")
-    switch (action.type) {
-        case "INCR":
-            return { ...state, qty: state.qty + 1 }
-        case "DECR":
-            return {
-                ...state,
-                qty: state.qty - 1
-            }
+/* let initialState = {
+     product:{
 
+     }
+} */
+let productReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case INCR:
+            return { ...state, qty: state.qty + 1 }
+        case DECR:
+            return { ...state, qty: state.qty - 1 }
         default:
             return state
     }
+
 }
 export { productReducer }

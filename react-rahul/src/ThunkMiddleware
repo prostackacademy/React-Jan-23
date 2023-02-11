@@ -1,0 +1,26 @@
+Q) When ever calling user Component? I want to dispatch
+action?
+
+let User = ()=>{
+
+returnn <></>
+
+}
+export default User;
+
+Ans: useEffect() Hoook
+
+What is action?
+action is function, it return actional objects.
+
+Redux - thunk
+action is function it return function, again calling and return actionable objects
+
+2)How to consume api in redux?
+
+
+using Axios @ action file only
+
+action is function. reducer is pure function.
+
+
